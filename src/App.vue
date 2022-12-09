@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { reactive } from 'vue';
 import Button from './components/button/Button.vue';
 
-const data = {
+const data = reactive({
   content: [
     {
       name: 'demo1',
@@ -12,7 +13,7 @@ const data = {
       value: 0,
     },
   ],
-};
+});
 </script>
 
 <template>
