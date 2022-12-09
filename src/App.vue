@@ -1,5 +1,18 @@
 <script setup lang="ts">
 import Button from './components/button/Button.vue';
+
+const data = {
+  content: [
+    {
+      name: 'demo1',
+      value: 0,
+    },
+    {
+      name: 'demo2',
+      value: 0,
+    },
+  ],
+};
 </script>
 
 <template>
@@ -10,5 +23,20 @@ import Button from './components/button/Button.vue';
       <Button label="Disabled" :disabled="true" />
       <Button label="Link" class="p-button-link" />
     </div>
+    <table>
+      <tr>
+        <td>name</td>
+        <td>value</td>
+      </tr>
+      <tr v-for="(item, index) in data.content" :key="index">
+        <td>
+          {{ item.name }}
+        </td>
+        <td>
+          {{ item.value }}
+          <input type="text" v-model="item.value" />
+        </td>
+      </tr>
+    </table>
   </div>
 </template>
